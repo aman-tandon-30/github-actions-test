@@ -8,9 +8,14 @@ jobs:
     steps:
       - name: Checkout Latest Commit
         uses: actions/checkout@v1
-        
+
       - name: List files
         run: ls -ltrh
+
+      - name: List github env variables
+        run: |
+          echo $GITHUB_REPOSITORY
+          echo "${{ github.token }}""
 
       - name: Running Public repo action Commands
         id: greet
