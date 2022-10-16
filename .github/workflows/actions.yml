@@ -1,0 +1,15 @@
+name: Running Workflow Actions
+
+on: [push]
+
+jobs:
+  run-github-actions-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running Public repo action Commands
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Aman
+      - name: Using github actions output
+        run: echo "${{ steps.greet.outputs.time }}"
