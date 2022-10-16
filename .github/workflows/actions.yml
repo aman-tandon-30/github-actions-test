@@ -15,7 +15,7 @@ jobs:
       - name: List github env variables
         run: |
           echo $GITHUB_REPOSITORY
-          echo "${{ github.token }}""
+          echo "${{ github.token }}"
 
       - name: Running Public repo action Commands
         id: greet
