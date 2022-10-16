@@ -6,10 +6,17 @@ jobs:
   run-github-actions-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Latest Commit
+        uses: actions/checkout@v1
+        
+      - name: List files
+        run: ls -ltrh
+
       - name: Running Public repo action Commands
         id: greet
         uses: actions/hello-world-javascript-action@v1
         with:
           who-to-greet: Aman
+
       - name: Using github actions output
         run: echo "${{ steps.greet.outputs.time }}"
