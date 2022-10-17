@@ -12,10 +12,11 @@ jobs:
       - name: Dump job contexts
         env: 
           JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo $JOB_CONTEXT
+        run: eccho $JOB_CONTEXT
 
       
       - name: Dump steps contexts
+        if: failure()
         env: 
           STEP_CONTEXT: ${{ toJson(steps) }}
         run: echo $STEP_CONTEXT
