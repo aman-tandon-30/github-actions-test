@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   print-contexts:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lates
     steps:
       - name: print some github contexts
         run: echo "We are going to print some github contexts"
