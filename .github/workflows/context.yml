@@ -18,7 +18,7 @@ jobs:
         if: failure()
         env: 
           JOB_CONTEXT: ${{ toJson(job) }}
-        run: ecch $JOB_CONTEXT
+        run: echo $JOB_CONTEXT
 
       
       - name: Dump steps contexts
