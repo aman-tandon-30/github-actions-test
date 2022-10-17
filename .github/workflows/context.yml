@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   print-contexts:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
       - name: print some github contexts
         run: echo "We are going to print some github contexts"
@@ -12,5 +12,5 @@ jobs:
       - name: Dump job contexts
         env: 
           JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo $JOB_CONTEXT
+        run: ech $JOB_CONTEXT
       
