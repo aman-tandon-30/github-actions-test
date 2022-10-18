@@ -23,5 +23,11 @@ jobs:
       - name: check solr status again
         run: |
           /opt/solr/bin/solr status
+      - name: check solr cores status
+        run: |
+          curl -v 'http://localhost:8983/solr/admin/cores?action=STATUS'
+      - name: Tail solr logs
+        run: |
+          tail -n 200 /var/solr/logs/solr.log
           
          
