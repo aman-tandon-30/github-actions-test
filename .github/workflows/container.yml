@@ -14,6 +14,7 @@ jobs:
       - name: check solr status
         run: |
           /opt/solr/bin/solr status
+        continue-on-error: true
       - name: start solr server
         if: failure()
         run: |
