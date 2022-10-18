@@ -8,6 +8,9 @@ jobs:
     container: 
       image: solr:latest
     steps:
+      - name: make solr data Directory
+        run: |
+          mkdir -p /var/solr/data  
       - name: check solr status
         run: |
           /opt/solr/bin/solr status
