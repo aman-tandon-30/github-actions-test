@@ -11,6 +11,7 @@ jobs:
       - name: make solr data Directory
         run: |
           mkdir -p /var/solr/data  
+          mkdir -p /var/solr/logs
       - name: check solr status
         run: |
           /opt/solr/bin/solr status
