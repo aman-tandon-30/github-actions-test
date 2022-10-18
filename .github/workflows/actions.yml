@@ -1,6 +1,6 @@
 name: Running Workflow Actions
 
-on: [push]
+on: [pull_request]
 
 jobs:
   run-github-actions-test:

@@ -1,6 +1,6 @@
 name: Context print
 
-on: [push]
+on: [pull_request]
 
 jobs:
   print-contexts:
