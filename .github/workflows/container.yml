@@ -1,0 +1,14 @@
+name: Using containers in Guthub Actions
+
+on: [push]
+
+jobs:
+  solr-docker:
+    runs-on: ubuntu-latest
+    container: 
+      image: solr:latest
+    steps:
+      - name: check solr status
+        run: |
+          /opt/solr/bin/solr status
+         
