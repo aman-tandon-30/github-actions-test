@@ -18,7 +18,7 @@ jobs:
         if: failure()
         run: |
           /opt/solr/bin/solr start
-          sleep(120)
+          sleep 30
       - name: check solr status again
         run: |
           /opt/solr/bin/solr status
