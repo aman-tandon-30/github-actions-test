@@ -11,4 +11,13 @@ jobs:
       - name: check solr status
         run: |
           /opt/solr/bin/solr status
+      - name: start solr server
+        if: failure()
+        run: |
+          /opt/solr/bin/solr start
+          sleep(120)
+      - name: check solr status again
+        run: |
+          /opt/solr/bin/solr status
+          
          
