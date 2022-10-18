@@ -16,7 +16,7 @@ jobs:
           /opt/solr/bin/solr status
         continue-on-error: true
       - name: start solr server
-        if: failure()
+        if: always()
         run: |
           /opt/solr/bin/solr start
           sleep 30
