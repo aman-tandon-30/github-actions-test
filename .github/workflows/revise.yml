@@ -11,4 +11,5 @@ jobs:
           git --version
           ls
           cd $GITHUB_WORKSPACE
+          pwd
           git checkout $GITHUB_SHA
