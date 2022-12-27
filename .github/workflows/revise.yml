@@ -1,0 +1,12 @@
+name: Test revision
+
+on: [push]
+
+jobs:
+  test-revison:
+    runs-on: ubuntu-latest
+    steps:
+      name: Printing the directory files, if any
+      run:  |
+        git --version
+        ls
