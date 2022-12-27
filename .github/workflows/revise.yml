@@ -10,5 +10,5 @@ jobs:
         run:  |
           git --version
           ls
-          cd $GITHUB_REPOSITORY
+          cd $GITHUB_WORKSPACE
           git checkout $GITHUB_SHA
