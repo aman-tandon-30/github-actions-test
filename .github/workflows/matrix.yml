@@ -1,0 +1,13 @@
+name : Designing the strategy
+
+on: push
+
+env:
+  NODE_VER: ${{ secrets.NODE_VER }}
+
+jobs:
+  node-install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check default node version
+        run: node -v
