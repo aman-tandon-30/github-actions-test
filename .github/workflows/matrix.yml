@@ -15,7 +15,7 @@ jobs:
         run: |
           echo "::set-output name=node-value:: $(echo [\"$NODE_VER\"] |sed 's/,/\", \"/g')"
   node-install:
-    needs: [ setup ]
+    needs: [ version-setup ]
     strategy:
       matrix: 
         node_version: ${{ needs.version-setup.outputs.matrix }}
