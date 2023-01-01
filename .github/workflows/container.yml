@@ -10,9 +10,8 @@ jobs:
     steps:
       - name: make solr data Directory
         run: |
-          sudo -
           mkdir -p /var/solr/data  
-          mkdir -p /opt/solr/server/logs
+          mkdir -p /opt/solr/logs
       - name: check solr status
         run: |
           /opt/solr/bin/solr status
@@ -30,6 +29,6 @@ jobs:
           curl -v 'http://localhost:8983/solr/admin/cores?action=STATUS'
       - name: Tail solr logs
         run: |
-          tail -n 200 /var/solr/logs/solr.log
+          tail -n 200 /var/solr/server/logs/solr.log
           
          
