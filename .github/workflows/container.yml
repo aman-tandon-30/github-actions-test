@@ -22,6 +22,8 @@ jobs:
           /opt/solr/bin/solr start
           sleep 30
           apt-get install locate
+          find /var -type f -name solr.log
+          find /opt -type f -name solr.log
           echo `locate solr.log`
       - name: check solr status again
         run: |
