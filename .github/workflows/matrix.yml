@@ -1,6 +1,6 @@
 name : Designing the strategy
 
-on: push
+on: pull_request
 
 env:
   NODE_VER: ${{ secrets.NODE_VER }}
