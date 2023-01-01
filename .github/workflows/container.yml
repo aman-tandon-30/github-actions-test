@@ -6,7 +6,7 @@ jobs:
   solr-docker:
     runs-on: ubuntu-latest
     container: # any steps further will run inside the container
-      image: solr:latest
+      image: solr:8.6
       options: --user root
     steps:
       - name: make solr data Directory
