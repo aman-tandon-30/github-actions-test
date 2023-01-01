@@ -10,4 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check default node version
-        run: node -v
+        run: | 
+          node -v
+          echo $NODE_VER
