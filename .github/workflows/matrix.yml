@@ -3,7 +3,7 @@ name : Designing the strategy
 on: push
 
 env:
-  NODE_VER: ${{ secrets.NODE_VER }}
+  NODE_VER: ${{ secrets.NODE_VERS }}
 
 jobs:
   node-install:
@@ -13,8 +13,15 @@ jobs:
         run: | 
           node -v
           echo $NODE_VER
+      - name: Setting the input values from secrets
+        id: sec
+        run: |
+          echo "::set-output name=matrix-browser:: $(echo [\"$NODE_VER\"] |sed 's/,/\", \"/g')"
       - name: Doing matrix wise node version node-install
-        run: node -v
+        run: |
+          node -v
+          echo ${{ sec.matrix-browser }}
       - uses: actions/setup-node@v1
         with:
           node-version: 6
+      
