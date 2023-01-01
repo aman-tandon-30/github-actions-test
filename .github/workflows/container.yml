@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: make solr data Directory
         run: |
+          sudo -
           mkdir -p /var/solr/data  
           mkdir -p /opt/solr/server/logs
       - name: check solr status
