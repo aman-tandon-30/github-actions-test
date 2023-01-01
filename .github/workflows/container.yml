@@ -21,6 +21,7 @@ jobs:
         run: |
           /opt/solr/bin/solr start
           sleep 30
+          echo `locate solr.log`
       - name: check solr status again
         run: |
           /opt/solr/bin/solr status
