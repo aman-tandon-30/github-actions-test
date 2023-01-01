@@ -16,7 +16,7 @@ jobs:
       - name: Setting the input values from secrets
         id: sec
         run: |
-          echo "::set-output name=matrix-browser:: $(echo [\"$NODE_VER\"] |sed 's/,/\", \"/g')"
+          echo "::set-output name=value:: $(echo [\"$NODE_VER\"] |sed 's/,/\", \"/g')"
       - name: Doing matrix wise node version node-install
         run: |
           node -v
