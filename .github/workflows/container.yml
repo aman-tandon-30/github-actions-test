@@ -5,13 +5,13 @@ on: [push]
 jobs:
   solr-docker:
     runs-on: ubuntu-latest
-    container: 
+    container: # any steps further will run inside the container
       image: solr:latest
     steps:
       - name: make solr data Directory
         run: |
           mkdir -p /var/solr/data  
-          mkdir -p /var/solr/logs
+          mkdir -p /opt/solr/server/logs
       - name: check solr status
         run: |
           /opt/solr/bin/solr status
