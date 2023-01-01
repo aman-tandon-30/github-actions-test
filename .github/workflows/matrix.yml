@@ -20,7 +20,7 @@ jobs:
       - name: Doing matrix wise node version node-install
         run: |
           node -v
-          echo ${{ sec.matrix-browser }}
+          echo ${{ sec.value }}
       - uses: actions/setup-node@v1
         with:
           node-version: 6
