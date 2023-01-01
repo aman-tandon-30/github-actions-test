@@ -6,7 +6,7 @@ env:
   NODE_VER: ${{ secrets.NODE_VER }}
 
 jobs:
-  setup:
+  version-setup:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.setVariables.outputs.node-value }}
@@ -18,7 +18,7 @@ jobs:
     needs: [ setup ]
     strategy:
       matrix: 
-        node_version: ${{ steps.setup.outputs.matrix }}
+        node_version: ${{ needs.version-setup.outputs.matrix }}
     runs-on: ubuntu-latest
     steps:
       - name: Check default node version
