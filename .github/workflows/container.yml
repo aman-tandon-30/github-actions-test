@@ -21,6 +21,7 @@ jobs:
         run: |
           /opt/solr/bin/solr start
           sleep 30
+          yum install locate
           echo `locate solr.log`
       - name: check solr status again
         run: |
