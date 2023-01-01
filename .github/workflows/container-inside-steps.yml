@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Installing the node
-        uses: docker://node:alpine3.16
+        uses: docker://solr:8.6
         with:
-          entrypoint: '/bin/echo' 
-          args: 'hello world'
+          entrypoint: '/opt/solr/bin/solr' 
+          args: 'status'
