@@ -24,7 +24,7 @@ jobs:
           sleep 30
           find /var -type f -name solr.log
           find /opt -type f -name solr.log
-          echo `locate solr.log`
+          touch /var/solr/logs/solr.log
       - name: check solr status again
         run: |
           /opt/solr/bin/solr status
