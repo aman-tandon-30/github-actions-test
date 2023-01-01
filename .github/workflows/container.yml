@@ -1,6 +1,6 @@
 name: Using containers in Guthub Actions
 
-on: [push]
+on: [pull_request]
 
 jobs:
   solr-docker:

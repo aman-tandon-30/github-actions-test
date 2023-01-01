@@ -1,0 +1,13 @@
+name: Testing the container to build inside the step
+
+on: [push]
+
+jobs:
+  container-inside-step:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Installing the node
+        uses: docker://node:alpine3.16
+        with:
+          entrypoint: '/bin/echo' 
+          args: 'hello world'
