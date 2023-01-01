@@ -13,3 +13,8 @@ jobs:
         run: | 
           node -v
           echo $NODE_VER
+      - name: Doing matrix wise node version node-install
+        run: node -v
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 6
