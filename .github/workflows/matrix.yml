@@ -3,25 +3,35 @@ name : Designing the strategy
 on: push
 
 env:
-  NODE_VER: ${{ secrets.NODE_VERS }}
+  NODE_VER: ${{ secrets.NODE_VER }}
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.setVariables.outputs.node-value }}
+    steps:
+      - id: setVariables
+        run: |
+          echo "::set-output name=node-value:: $(echo [\"$NODE_VER\"] |sed 's/,/\", \"/g')"
   node-install:
+    strategy:
+      matrix: 
+        node_version: ${{ steps.steps.outputs.matrix }}
     runs-on: ubuntu-latest
     steps:
       - name: Check default node version
         run: | 
           node -v
           echo $NODE_VER
-      - name: Setting the input values from secrets
-        id: sec
-        run: |
-          echo "::set-output name=value:: $(echo [\"$NODE_VER\"] |sed 's/,/\", \"/g')"
       - name: Doing matrix wise node version node-install
         run: |
           node -v
           echo ${{ steps.sec.outputs.value }}
       - uses: actions/setup-node@v1
         with:
-          node-version: 6
+          node-version: ${{ matrix.node_version }}
+      - name: checking the node version
+        run: |
+          node -v
       
