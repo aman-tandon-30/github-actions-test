@@ -19,7 +19,8 @@ jobs:
     strategy:
       matrix: 
         node_version: ${{ fromJson(needs.version-setup.outputs.matrix) }}
-    runs-on: ubuntu-latest
+        os: ["windows-latest", "ubuntu-latest","macos-latest"]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Check default node version
         run: | 
