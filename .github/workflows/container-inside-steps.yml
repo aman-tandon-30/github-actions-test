@@ -10,4 +10,4 @@ jobs:
         uses: docker://solr:8.6
         with:
           entrypoint: '/opt/solr/bin/solr' 
-          args: 'status'
+          args: 'start'
