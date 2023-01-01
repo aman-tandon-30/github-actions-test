@@ -20,7 +20,7 @@ jobs:
       - name: start solr server
         if: always()
         run: |
-          /opt/solr/bin/solr start
+          /opt/solr/bin/solr start -force
           sleep 30
           sudo find /var -type f -name solr.log
           sudo find /opt -type f -name solr.log
