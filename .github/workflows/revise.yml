@@ -1,7 +1,7 @@
 name: Test revision
 
 on: 
-  push:
+  pull_request:
   repository_dispatch:
 
 jobs:
