@@ -18,7 +18,7 @@ jobs:
     needs: [ version-setup ]
     strategy:
       matrix: 
-        node_version: ${{ needs.version-setup.outputs.matrix }}
+        node_version: ${{ fromJson(needs.version-setup.outputs.matrix) }}
     runs-on: ubuntu-latest
     steps:
       - name: Check default node version
