@@ -20,12 +20,16 @@ jobs:
       matrix: 
         node_version: ${{ fromJson(needs.version-setup.outputs.matrix) }}
         os: ["windows-latest", "ubuntu-latest","macos-latest"]
+        exclude: 
+          - os: windows-latest
+            node_version: 6
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check default node version
         run: | 
           node -v
           echo $NODE_VER
+          
       - name: Doing matrix wise node version node-install
         run: |
           node -v
